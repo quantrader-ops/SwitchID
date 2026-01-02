@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwitchID</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- 头部 -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="8" r="4" fill="white"/>
+            <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="6" r="3" fill="#4ADE80"/>
+            <path d="M16.5 6l1 1 2-2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="header-info">
+          <h1 data-i18n="popupTitle">账号切换</h1>
+          <div class="current-site" id="current-site">
+            <img id="site-favicon" class="site-favicon" src="" alt="">
+            <span id="site-icon-fallback" class="site-icon" style="display: none;">🌐</span>
+            <span id="current-domain">加载中...</span>
+          </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div id="active-profile-badge" class="active-profile-badge" style="display: none;">
+          <span class="active-dot"></span>
+          <span id="active-profile-name">-</span>
+        </div>
+        <button id="btn-theme-toggle" class="btn-icon" title="切换主题">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+        <button id="btn-more-menu" class="btn-icon" data-i18n-title="moreActions" title="更多操作">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="1"/>
+            <circle cx="12" cy="5" r="1"/>
+            <circle cx="12" cy="19" r="1"/>
+          </svg>
+        </button>
+        <button id="btn-settings" class="btn-icon" data-i18n-title="settings" title="设置">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- 快速操作栏 -->
+    <div class="quick-actions">
+      <button id="btn-save-quick" class="quick-btn save" data-i18n-title="saveAccount" title="保存当前登录状态">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/>
+          <polyline points="17,21 17,13 7,13 7,21"/>
+          <polyline points="7,3 7,8 15,8"/>
+        </svg>
+        <span data-i18n="saveAccount">保存账号</span>
+      </button>
+      <button id="btn-clear-quick" class="quick-btn clear" data-i18n-title="logout" title="退出当前登录">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/>
+          <polyline points="16,17 21,12 16,7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        <span data-i18n="logout">退出登录</span>
+      </button>
+      <button id="btn-help-quick" class="quick-btn help" title="使用帮助和风险提示">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        <span>帮助</span>
+      </button>
+    </div>
+
+    <!-- 帮助和风险提示面板 -->
+    <div id="help-panel" class="help-panel" style="display: none;">
+      <div class="help-panel-header">
+        <span>📖 使用帮助与风险提示</span>
+        <button id="btn-close-help" class="btn-close">×</button>
+      </div>
+      <div class="help-panel-body">
+        <div class="help-section">
+          <h4>🔒 产品定位</h4>
+          <p>SwitchID 是一个<strong>隐私保护和本地账户管理工具</strong>：</p>
+          <ul>
+            <li>✓ 防止浏览器指纹追踪，保护隐私</li>
+            <li>✓ 本地管理多个账户登录状态</li>
+            <li>✓ 所有数据仅存储在本地设备</li>
+          </ul>
+        </div>
+        
+        <div class="help-section warning">
+          <h4>⚠️ 重要风险提示</h4>
+          <div class="risk-item">
+            <strong>法律合规风险：</strong>
+            <p>• 不同网站对多账户使用有不同政策</p>
+            <p>• 用户需自行遵守网站服务条款</p>
+            <p>• 仅可管理您合法拥有的账户</p>
+          </div>
+          <div class="risk-item">
+            <strong>账户安全风险：</strong>
+            <p>• 频繁切换可能触发安全检查</p>
+            <p>• 异常行为可能导致账户限制</p>
+            <p>• 建议保持合理使用频率</p>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <h4>📋 使用建议</h4>
+          <ul>
+            <li>✓ 使用前了解网站服务条款</li>
+            <li>✓ 仅管理合法拥有的账户</li>
+            <li>✓ 定期备份重要账户数据</li>
+            <li>✓ 保持合理的使用频率</li>
+          </ul>
+        </div>
+
+        <div class="help-section">
+          <h4>🛡️ 隐私保护说明</h4>
+          <p>本工具提供浏览器指纹保护功能，防止恶意追踪：</p>
+          <ul>
+            <li>• Canvas 指纹伪装</li>
+            <li>• WebGL 指纹保护</li>
+            <li>• User-Agent 管理</li>
+            <li>• 音频指纹保护</li>
+          </ul>
+          <p class="note">注意：过度伪装可能影响网站功能</p>
+        </div>
+
+        <div class="help-actions">
+          <button id="btn-view-guide" class="btn btn-primary btn-sm">查看详细指南</button>
+          <button id="btn-view-terms" class="btn btn-secondary btn-sm">使用条款</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+      <!-- 保存新账号面板（默认隐藏） -->
+      <div id="save-panel" class="save-panel" style="display: none;">
+        <div class="save-panel-header">
+          <span data-i18n="saveCurrentAccount">保存当前账号</span>
+          <button id="btn-close-save" class="btn-close">×</button>
+        </div>
+        <div class="save-panel-body">
+          <div class="input-group">
+            <input 
+              type="text" 
+              id="profile-name-input" 
+              class="input"
+              data-i18n-placeholder="accountNamePlaceholder"
+              placeholder="给这个账号起个名字..."
+              maxlength="20"
+              autofocus
+            />
+            <div class="input-hint" data-i18n="saveHint">💡 请确保已登录后再保存</div>
+          </div>
+          <div class="color-picker">
+            <span class="color-label" data-i18n="selectColor">选择颜色标识：</span>
+            <div class="colors" id="color-picker">
+              <button class="color-btn active" data-color="#4285F4" style="background:#4285F4"></button>
+              <button class="color-btn" data-color="#34A853" style="background:#34A853"></button>
+              <button class="color-btn" data-color="#FBBC05" style="background:#FBBC05"></button>
+              <button class="color-btn" data-color="#EA4335" style="background:#EA4335"></button>
+              <button class="color-btn" data-color="#9333EA" style="background:#9333EA"></button>
+              <button class="color-btn" data-color="#EC4899" style="background:#EC4899"></button>
+              <button class="color-btn" data-color="#14B8A6" style="background:#14B8A6"></button>
+              <button class="color-btn" data-color="#6B7280" style="background:#6B7280"></button>
+            </div>
+          </div>
+          <button id="btn-save-confirm" class="btn btn-primary btn-block">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20,6 9,17 4,12"/>
+            </svg>
+            <span data-i18n="confirmSave">确认保存</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 账号列表 -->
+      <div id="profiles-section" class="profiles-section">
+        <!-- 最近使用 -->
+        <div id="recent-section" class="recent-section" style="display: none;">
+          <div class="section-header">
+            <span class="section-title">⏱️ <span data-i18n="recentUsed">最近使用</span></span>
+          </div>
+          <div id="recent-list" class="recent-list">
+            <!-- 动态生成 -->
+          </div>
+        </div>
+        
+        <div class="section-header">
+          <span class="section-title" data-i18n="savedAccounts">已保存的账号</span>
+          <div class="section-actions">
+            <button id="btn-auto-rotate" class="btn-mini" title="自动轮换设置">
+              🔄
+            </button>
+            <select id="sort-select" class="sort-select" title="排序方式">
+              <option value="recent" data-i18n="sortRecent">最近使用</option>
+              <option value="name" data-i18n="sortName">按名称</option>
+              <option value="created" data-i18n="sortCreated">创建时间</option>
+              <option value="useCount" data-i18n="sortUseCount">使用次数</option>
+            </select>
+            <span class="profile-count" id="profile-count">0 个</span>
+          </div>
+        </div>
+        
+        <!-- 自动轮换状态条 -->
+        <div id="auto-rotate-bar" class="auto-rotate-bar" style="display: none;">
+          <span class="rotate-icon">🔄</span>
+          <span class="rotate-text" data-i18n="autoRotating">自动轮换中</span>
+          <span class="rotate-info" id="rotate-info">每 30 分钟</span>
+          <button class="rotate-stop" id="btn-stop-rotate" title="停止">✕</button>
+        </div>
+        
+        <!-- 搜索框 -->
+        <div class="search-box" style="display: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <input type="text" id="search-input" data-i18n-placeholder="searchPlaceholder" placeholder="搜索账号..." />
+        </div>
+        
+        <div id="profile-list" class="profile-list">
+          <!-- 动态生成 -->
+        </div>
+      </div>
+
+      <!-- 空状态 -->
+      <div id="empty-state" class="empty-state" style="display: none;">
+        <div class="empty-illustration">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="35" fill="#F3F4F6"/>
+            <circle cx="40" cy="32" r="12" fill="#D1D5DB"/>
+            <path d="M20 60c0-11 9-20 20-20s20 9 20 20" fill="#D1D5DB"/>
+            <circle cx="55" cy="25" r="10" fill="#4ADE80"/>
+            <path d="M51 25l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 data-i18n="emptyTitle">还没有保存的账号</h3>
+        <p data-i18n="emptyDesc">登录网站后，点击上方「保存账号」按钮</p>
+        <p class="tip" data-i18n="emptyTip">💡 支持保存多个账号，一键快速切换</p>
+      </div>
+
+      <!-- 加载状态 -->
+      <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+        <span data-i18n="loading">加载中...</span>
+      </div>
+
+      <!-- 不支持提示 -->
+      <div id="unsupported" class="unsupported" style="display: none;">
+        <div class="unsupported-icon">🚫</div>
+        <h3 data-i18n="unsupportedTitle">此页面不支持</h3>
+        <p data-i18n="unsupportedDesc">请在普通网页上使用此扩展</p>
+      </div>
+    </main>
+
+    <!-- 底部提示 -->
+    <footer class="footer">
+      <div class="footer-tip">
+        <span data-i18n="quickSwitchTip">💡 按 1-9 快速切换</span>
+        <span class="footer-divider">·</span>
+        <button id="btn-export-quick" class="footer-btn" data-i18n-title="exportDomain" title="导出当前网站账号">📤 <span data-i18n="export">导出</span></button>
+        <button id="btn-import-quick" class="footer-btn" data-i18n-title="import" title="导入账号">📥 <span data-i18n="import">导入</span></button>
+      </div>
+      <div class="legal-notice">
+        <span class="legal-text">⚠️ 请遵守网站服务条款，仅管理合法拥有的账号</span>
+      </div>
+      <input type="file" id="import-file-input" accept=".json" style="display: none;" />
+    </footer>
+  </div>
+
+  <!-- Toast 通知 -->
+  <div id="toast" class="toast">
+    <div class="toast-icon" id="toast-icon"></div>
+    <span id="toast-message"></span>
+  </div>
+
+  <!-- 确认对话框 -->
+  <div id="confirm-modal" class="modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-icon" id="modal-icon">⚠️</div>
+      <h3 id="modal-title" data-i18n="confirmAction">确认操作</h3>
+      <p id="modal-message" data-i18n="confirmActionMsg">确定要执行此操作吗？</p>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="btn btn-secondary" data-i18n="cancel">取消</button>
+        <button id="modal-confirm" class="btn btn-danger" data-i18n="confirm">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 编辑对话框 -->
+  <div id="edit-modal" class="modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content edit-modal-content">
+      <h3 data-i18n="editAccount">编辑账号</h3>
+      <div class="edit-form">
+        <div class="input-group">
+          <label data-i18n="accountName">账号名称</label>
+          <input type="text" id="edit-name-input" class="input" maxlength="20" />
+        </div>
+        <div class="input-group">
+          <label data-i18n="note">备注说明</label>
+          <input type="text" id="edit-note-input" class="input" data-i18n-placeholder="notePlaceholder" placeholder="可选，如：工作账号、测试账号" maxlength="50" />
+        </div>
+        <div class="input-group">
+          <label>🏷️ <span data-i18n="tags">账号标签</span></label>
+          <div class="tags-input-wrapper">
+            <div id="edit-tags-list" class="tags-list"></div>
+            <input type="text" id="edit-tags-input" class="input tags-input" data-i18n-placeholder="tagsPlaceholder" placeholder="输入标签后按回车添加" maxlength="10" />
+          </div>
+          <div class="preset-tags">
+            <span class="preset-tag" data-tag="主号" data-i18n="presetTagMain">主号</span>
+            <span class="preset-tag" data-tag="小号" data-i18n="presetTagAlt">小号</span>
+            <span class="preset-tag" data-tag="测试" data-i18n="presetTagTest">测试</span>
+            <span class="preset-tag" data-tag="工作" data-i18n="presetTagWork">工作</span>
+            <span class="preset-tag" data-tag="个人" data-i18n="presetTagPersonal">个人</span>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>🔐 <span data-i18n="credentials">登录凭证备忘（加密存储）</span></label>
+          <input type="text" id="edit-login-hint" class="input" data-i18n-placeholder="emailPlaceholder" placeholder="如：邮箱 xxx@xx.com" maxlength="100" />
+          <input type="password" id="edit-password-hint" class="input" data-i18n-placeholder="passwordPlaceholder" placeholder="密码提示（仅供自己参考）" maxlength="50" style="margin-top: 6px;" />
+          <div class="input-hint" data-i18n="credentialsHint">⚠️ 仅存储在本地，建议只记录提示信息</div>
+        </div>
+        <div class="input-group">
+          <label data-i18n="group">所属分组</label>
+          <select id="edit-group-select" class="input">
+            <option value="" data-i18n="noGroup">无分组</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label data-i18n="colorLabel">颜色标识</label>
+          <div class="colors" id="edit-color-picker">
+            <button class="color-btn" data-color="#4285F4" style="background:#4285F4"></button>
+            <button class="color-btn" data-color="#34A853" style="background:#34A853"></button>
+            <button class="color-btn" data-color="#FBBC05" style="background:#FBBC05"></button>
+            <button class="color-btn" data-color="#EA4335" style="background:#EA4335"></button>
+            <button class="color-btn" data-color="#9333EA" style="background:#9333EA"></button>
+            <button class="color-btn" data-color="#EC4899" style="background:#EC4899"></button>
+            <button class="color-btn" data-color="#14B8A6" style="background:#14B8A6"></button>
+            <button class="color-btn" data-color="#6B7280" style="background:#6B7280"></button>
+          </div>
+        </div>
+        
+        <!-- 高级配置折叠区 -->
+        <details class="advanced-config">
+          <summary data-i18n="advancedConfig">🔧 高级配置（UA/代理/指纹）</summary>
+          <div class="advanced-config-body">
+            <div class="input-group">
+              <label data-i18n="customUA">独立 User-Agent</label>
+              <select id="edit-ua-preset" class="input">
+                <option value="" data-i18n="useGlobalSettings">使用全局设置</option>
+                <option value="chrome-win">Chrome Win</option>
+                <option value="chrome-mac">Chrome Mac</option>
+                <option value="firefox-win">Firefox Win</option>
+                <option value="safari-mac">Safari Mac</option>
+                <option value="mobile-android">Android</option>
+                <option value="mobile-ios">iOS</option>
+                <option value="custom">自定义...</option>
+              </select>
+              <input type="text" id="edit-custom-ua" class="input" data-i18n-placeholder="customUAPlaceholder" placeholder="自定义 UA 字符串" style="display:none; margin-top:6px;" />
+            </div>
+            <div class="input-group">
+              <label data-i18n="proxy">独立代理</label>
+              <div class="proxy-config-group">
+                <div class="proxy-inline">
+                  <select id="edit-proxy-type" class="input proxy-type-select">
+                    <option value="" data-i18n="proxyNone">不使用代理</option>
+                    <option value="http">HTTP</option>
+                    <option value="https">HTTPS</option>
+                    <option value="socks5">SOCKS5</option>
+                  </select>
+                </div>
+                <div class="proxy-details" id="proxy-details" style="display: none;">
+                  <div class="proxy-row">
+                    <input type="text" id="edit-proxy-host" class="input" placeholder="代理地址" />
+                    <input type="number" id="edit-proxy-port" class="input proxy-port" placeholder="端口" />
+                  </div>
+                  <div class="proxy-row">
+                    <input type="text" id="edit-proxy-user" class="input" placeholder="用户名（可选）" />
+                    <input type="password" id="edit-proxy-pass" class="input" placeholder="密码（可选）" />
+                  </div>
+                  <button type="button" id="btn-test-proxy" class="btn btn-secondary btn-sm btn-test-proxy">
+                    🔍 测试代理
+                  </button>
+                  <div id="proxy-test-result" class="proxy-test-result"></div>
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <label data-i18n="fingerprint">指纹防关联</label>
+              <div class="fingerprint-actions">
+                <button type="button" id="btn-random-fingerprint" class="btn btn-secondary btn-sm" data-i18n="randomFingerprint">🎲 随机</button>
+                <button type="button" id="btn-clear-fingerprint" class="btn btn-secondary btn-sm" data-i18n="clearFingerprint">✕ 清除</button>
+              </div>
+              <div id="fingerprint-status" class="fingerprint-status" style="margin-top:6px;" data-i18n="fingerprintNotConfigured">未配置</div>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="modal-actions">
+        <button id="edit-cancel" class="btn btn-secondary" data-i18n="cancel">取消</button>
+        <button id="edit-save" class="btn btn-primary" data-i18n="save">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 自动轮换设置对话框 -->
+  <div id="rotate-modal" class="modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <h3 data-i18n="autoRotateSettings">🔄 自动轮换设置</h3>
+      <div class="rotate-form">
+        <div class="input-group">
+          <label data-i18n="rotateInterval">轮换间隔</label>
+          <select id="rotate-interval" class="input">
+            <option value="5">5 分钟</option>
+            <option value="10">10 分钟</option>
+            <option value="15">15 分钟</option>
+            <option value="30" selected>30 分钟</option>
+            <option value="60">1 小时</option>
+            <option value="120">2 小时</option>
+            <option value="360">6 小时</option>
+            <option value="720">12 小时</option>
+            <option value="1440">24 小时</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label data-i18n="rotateAccounts">参与轮换的账号</label>
+          <div id="rotate-profiles-list" class="rotate-profiles-list">
+            <!-- 动态生成 -->
+          </div>
+          <div class="input-hint" data-i18n="rotateHint">💡 至少选择 2 个账号</div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button id="rotate-cancel" class="btn btn-secondary" data-i18n="cancel">取消</button>
+        <button id="rotate-start" class="btn btn-primary" data-i18n="startRotate">开始轮换</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 全局操作菜单 -->
+  <div id="global-menu" class="global-menu" style="display: none;">
+    <button class="menu-item" data-action="refresh-all">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M23 4v6h-6M1 20v-6h6"/>
+        <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+      </svg>
+      <span data-i18n="refreshAll">刷新所有账号</span>
+    </button>
+    <button class="menu-item" data-action="verify-all">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+        <polyline points="22,4 12,14.01 9,11.01"/>
+      </svg>
+      <span data-i18n="verifyAll">检查账号状态</span>
+    </button>
+    <div class="menu-divider"></div>
+    <button class="menu-item" data-action="export-domain">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+        <polyline points="17,8 12,3 7,8"/>
+        <line x1="12" y1="3" x2="12" y2="15"/>
+      </svg>
+      <span data-i18n="exportDomain">导出当前网站</span>
+    </button>
+    <button class="menu-item" data-action="export-all">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+        <polyline points="17,8 12,3 7,8"/>
+        <line x1="12" y1="3" x2="12" y2="15"/>
+      </svg>
+      <span data-i18n="exportAll">导出全部数据</span>
+    </button>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

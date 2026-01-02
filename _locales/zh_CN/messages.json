@@ -1,0 +1,362 @@
+{
+  "extName": {
+    "message": "SwitchID - 多账号管理助手",
+    "description": "扩展名称"
+  },
+  "extDescription": {
+    "message": "一键保存和切换网站登录账号，支持指纹防护，让多账号管理更轻松",
+    "description": "扩展描述"
+  },
+  "popupTitle": {
+    "message": "账号切换",
+    "description": "弹窗标题"
+  },
+  "saveAccount": {
+    "message": "保存账号",
+    "description": "保存账号按钮"
+  },
+  "logout": {
+    "message": "退出登录",
+    "description": "退出登录按钮"
+  },
+  "loading": {
+    "message": "加载中...",
+    "description": "加载提示"
+  },
+  "savedAccounts": {
+    "message": "已保存的账号",
+    "description": "已保存账号标题"
+  },
+  "recentUsed": {
+    "message": "最近使用",
+    "description": "最近使用标题"
+  },
+  "saveCurrentAccount": {
+    "message": "保存当前账号",
+    "description": "保存面板标题"
+  },
+  "accountNamePlaceholder": {
+    "message": "给这个账号起个名字...",
+    "description": "账号名称输入框占位符"
+  },
+  "saveHint": {
+    "message": "💡 请确保已登录后再保存",
+    "description": "保存提示"
+  },
+  "selectColor": {
+    "message": "选择颜色标识：",
+    "description": "颜色选择标签"
+  },
+  "confirmSave": {
+    "message": "确认保存",
+    "description": "确认保存按钮"
+  },
+  "switch": {
+    "message": "切换",
+    "description": "切换按钮"
+  },
+  "switching": {
+    "message": "切换中...",
+    "description": "切换中状态"
+  },
+  "emptyTitle": {
+    "message": "还没有保存的账号",
+    "description": "空状态标题"
+  },
+  "emptyDesc": {
+    "message": "登录网站后，点击上方「保存账号」按钮",
+    "description": "空状态描述"
+  },
+  "emptyTip": {
+    "message": "💡 支持保存多个账号，一键快速切换",
+    "description": "空状态提示"
+  },
+  "unsupportedTitle": {
+    "message": "此页面不支持",
+    "description": "不支持页面标题"
+  },
+  "unsupportedDesc": {
+    "message": "请在普通网页上使用此扩展",
+    "description": "不支持页面描述"
+  },
+  "quickSwitchTip": {
+    "message": "💡 按 1-9 快速切换",
+    "description": "快捷键提示"
+  },
+  "export": {
+    "message": "导出",
+    "description": "导出按钮"
+  },
+  "import": {
+    "message": "导入",
+    "description": "导入按钮"
+  },
+  "moreActions": {
+    "message": "更多操作",
+    "description": "更多操作按钮"
+  },
+  "settings": {
+    "message": "设置",
+    "description": "设置按钮"
+  },
+  "current": {
+    "message": "当前",
+    "description": "当前账号标识"
+  },
+  "autoRotating": {
+    "message": "自动轮换中",
+    "description": "自动轮换状态"
+  },
+  "every": {
+    "message": "每",
+    "description": "每（时间间隔）"
+  },
+  "minutes": {
+    "message": "分钟",
+    "description": "分钟"
+  },
+  "sortRecent": {
+    "message": "最近使用",
+    "description": "排序-最近使用"
+  },
+  "sortName": {
+    "message": "按名称",
+    "description": "排序-按名称"
+  },
+  "sortCreated": {
+    "message": "创建时间",
+    "description": "排序-创建时间"
+  },
+  "sortUseCount": {
+    "message": "使用次数",
+    "description": "排序-使用次数"
+  },
+  "editAccount": {
+    "message": "编辑账号",
+    "description": "编辑账号标题"
+  },
+  "accountName": {
+    "message": "账号名称",
+    "description": "账号名称标签"
+  },
+  "note": {
+    "message": "备注说明",
+    "description": "备注标签"
+  },
+  "notePlaceholder": {
+    "message": "可选，如：工作账号、测试账号",
+    "description": "备注占位符"
+  },
+  "tags": {
+    "message": "账号标签",
+    "description": "标签标签"
+  },
+  "tagsPlaceholder": {
+    "message": "输入标签后按回车添加",
+    "description": "标签输入占位符"
+  },
+  "credentials": {
+    "message": "登录凭证备忘（加密存储）",
+    "description": "凭证标签"
+  },
+  "emailPlaceholder": {
+    "message": "如：邮箱 xxx@xx.com",
+    "description": "邮箱占位符"
+  },
+  "passwordPlaceholder": {
+    "message": "密码提示（仅供自己参考）",
+    "description": "密码占位符"
+  },
+  "credentialsHint": {
+    "message": "⚠️ 仅存储在本地，建议只记录提示信息",
+    "description": "凭证提示"
+  },
+  "group": {
+    "message": "所属分组",
+    "description": "分组标签"
+  },
+  "noGroup": {
+    "message": "无分组",
+    "description": "无分组选项"
+  },
+  "colorLabel": {
+    "message": "颜色标识",
+    "description": "颜色标签"
+  },
+  "advancedConfig": {
+    "message": "🔧 高级配置（UA/代理/指纹）",
+    "description": "高级配置标题"
+  },
+  "customUA": {
+    "message": "独立 User-Agent",
+    "description": "自定义UA标签"
+  },
+  "useGlobalSettings": {
+    "message": "使用全局设置",
+    "description": "使用全局设置选项"
+  },
+  "customUAPlaceholder": {
+    "message": "自定义 UA 字符串",
+    "description": "自定义UA占位符"
+  },
+  "proxy": {
+    "message": "独立代理",
+    "description": "代理标签"
+  },
+  "proxyNone": {
+    "message": "无",
+    "description": "无代理选项"
+  },
+  "proxyPlaceholder": {
+    "message": "地址:端口",
+    "description": "代理占位符"
+  },
+  "fingerprint": {
+    "message": "指纹防关联",
+    "description": "指纹标签"
+  },
+  "randomFingerprint": {
+    "message": "🎲 随机",
+    "description": "随机指纹按钮"
+  },
+  "clearFingerprint": {
+    "message": "✕ 清除",
+    "description": "清除指纹按钮"
+  },
+  "fingerprintNotConfigured": {
+    "message": "未配置",
+    "description": "指纹未配置状态"
+  },
+  "cancel": {
+    "message": "取消",
+    "description": "取消按钮"
+  },
+  "save": {
+    "message": "保存",
+    "description": "保存按钮"
+  },
+  "confirm": {
+    "message": "确定",
+    "description": "确定按钮"
+  },
+  "confirmAction": {
+    "message": "确认操作",
+    "description": "确认操作标题"
+  },
+  "confirmActionMsg": {
+    "message": "确定要执行此操作吗？",
+    "description": "确认操作消息"
+  },
+  "deleteConfirm": {
+    "message": "删除确认",
+    "description": "删除确认标题"
+  },
+  "deleteConfirmMsg": {
+    "message": "确定要删除「{name}」吗？此操作无法撤销。",
+    "description": "删除确认消息"
+  },
+  "logoutConfirm": {
+    "message": "退出登录",
+    "description": "退出登录确认标题"
+  },
+  "logoutConfirmMsg": {
+    "message": "确定要清除当前网站的登录状态吗？",
+    "description": "退出登录确认消息"
+  },
+  "autoRotateSettings": {
+    "message": "🔄 自动轮换设置",
+    "description": "自动轮换设置标题"
+  },
+  "rotateInterval": {
+    "message": "轮换间隔",
+    "description": "轮换间隔标签"
+  },
+  "rotateAccounts": {
+    "message": "参与轮换的账号",
+    "description": "参与轮换账号标签"
+  },
+  "rotateHint": {
+    "message": "💡 至少选择 2 个账号",
+    "description": "轮换提示"
+  },
+  "startRotate": {
+    "message": "开始轮换",
+    "description": "开始轮换按钮"
+  },
+  "refreshAll": {
+    "message": "刷新所有账号",
+    "description": "刷新所有账号菜单"
+  },
+  "verifyAll": {
+    "message": "检查账号状态",
+    "description": "检查账号状态菜单"
+  },
+  "exportDomain": {
+    "message": "导出当前网站",
+    "description": "导出当前网站菜单"
+  },
+  "exportAll": {
+    "message": "导出全部数据",
+    "description": "导出全部数据菜单"
+  },
+  "refreshAccount": {
+    "message": "刷新账号",
+    "description": "刷新账号菜单"
+  },
+  "duplicateAccount": {
+    "message": "复制账号",
+    "description": "复制账号菜单"
+  },
+  "clearAndSwitch": {
+    "message": "清除并切换",
+    "description": "清除并切换菜单"
+  },
+  "quickSwitch": {
+    "message": "快速切换账号",
+    "description": "快捷键描述"
+  },
+  "presetTagMain": {
+    "message": "主号",
+    "description": "预设标签-主号"
+  },
+  "presetTagAlt": {
+    "message": "小号",
+    "description": "预设标签-小号"
+  },
+  "presetTagTest": {
+    "message": "测试",
+    "description": "预设标签-测试"
+  },
+  "presetTagWork": {
+    "message": "工作",
+    "description": "预设标签-工作"
+  },
+  "presetTagPersonal": {
+    "message": "个人",
+    "description": "预设标签-个人"
+  },
+  "items": {
+    "message": "个",
+    "description": "个（计数单位）"
+  },
+  "noResults": {
+    "message": "没有找到匹配的账号",
+    "description": "搜索无结果"
+  },
+  "searchPlaceholder": {
+    "message": "搜索账号...",
+    "description": "搜索占位符"
+  },
+  "ungrouped": {
+    "message": "未分组",
+    "description": "未分组标签"
+  },
+  "toggleThemeLight": {
+    "message": "切换到浅色模式",
+    "description": "切换到浅色模式"
+  },
+  "toggleThemeDark": {
+    "message": "切换到深色模式",
+    "description": "切换到深色模式"
+  }
+}

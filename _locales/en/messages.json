@@ -1,0 +1,362 @@
+{
+  "extName": {
+    "message": "SwitchID - Multi-Account Manager",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Save and switch website login accounts with one click, with fingerprint protection for easier multi-account management",
+    "description": "Extension description"
+  },
+  "popupTitle": {
+    "message": "Switch Account",
+    "description": "Popup title"
+  },
+  "saveAccount": {
+    "message": "Save Account",
+    "description": "Save account button"
+  },
+  "logout": {
+    "message": "Logout",
+    "description": "Logout button"
+  },
+  "loading": {
+    "message": "Loading...",
+    "description": "Loading hint"
+  },
+  "savedAccounts": {
+    "message": "Saved Accounts",
+    "description": "Saved accounts title"
+  },
+  "recentUsed": {
+    "message": "Recent",
+    "description": "Recent used title"
+  },
+  "saveCurrentAccount": {
+    "message": "Save Current Account",
+    "description": "Save panel title"
+  },
+  "accountNamePlaceholder": {
+    "message": "Give this account a name...",
+    "description": "Account name input placeholder"
+  },
+  "saveHint": {
+    "message": "💡 Make sure you're logged in before saving",
+    "description": "Save hint"
+  },
+  "selectColor": {
+    "message": "Select color:",
+    "description": "Color selection label"
+  },
+  "confirmSave": {
+    "message": "Confirm Save",
+    "description": "Confirm save button"
+  },
+  "switch": {
+    "message": "Switch",
+    "description": "Switch button"
+  },
+  "switching": {
+    "message": "Switching...",
+    "description": "Switching status"
+  },
+  "emptyTitle": {
+    "message": "No saved accounts",
+    "description": "Empty state title"
+  },
+  "emptyDesc": {
+    "message": "Log in to a website, then click \"Save Account\"",
+    "description": "Empty state description"
+  },
+  "emptyTip": {
+    "message": "💡 Save multiple accounts and switch with one click",
+    "description": "Empty state tip"
+  },
+  "unsupportedTitle": {
+    "message": "Page not supported",
+    "description": "Unsupported page title"
+  },
+  "unsupportedDesc": {
+    "message": "Please use this extension on regular web pages",
+    "description": "Unsupported page description"
+  },
+  "quickSwitchTip": {
+    "message": "💡 Press 1-9 to quick switch",
+    "description": "Shortcut tip"
+  },
+  "export": {
+    "message": "Export",
+    "description": "Export button"
+  },
+  "import": {
+    "message": "Import",
+    "description": "Import button"
+  },
+  "moreActions": {
+    "message": "More",
+    "description": "More actions button"
+  },
+  "settings": {
+    "message": "Settings",
+    "description": "Settings button"
+  },
+  "current": {
+    "message": "Current",
+    "description": "Current account label"
+  },
+  "autoRotating": {
+    "message": "Auto rotating",
+    "description": "Auto rotate status"
+  },
+  "every": {
+    "message": "Every",
+    "description": "Every (time interval)"
+  },
+  "minutes": {
+    "message": "min",
+    "description": "Minutes"
+  },
+  "sortRecent": {
+    "message": "Recent",
+    "description": "Sort by recent"
+  },
+  "sortName": {
+    "message": "Name",
+    "description": "Sort by name"
+  },
+  "sortCreated": {
+    "message": "Created",
+    "description": "Sort by created"
+  },
+  "sortUseCount": {
+    "message": "Usage",
+    "description": "Sort by use count"
+  },
+  "editAccount": {
+    "message": "Edit Account",
+    "description": "Edit account title"
+  },
+  "accountName": {
+    "message": "Account Name",
+    "description": "Account name label"
+  },
+  "note": {
+    "message": "Note",
+    "description": "Note label"
+  },
+  "notePlaceholder": {
+    "message": "Optional, e.g.: Work account, Test account",
+    "description": "Note placeholder"
+  },
+  "tags": {
+    "message": "Tags",
+    "description": "Tags label"
+  },
+  "tagsPlaceholder": {
+    "message": "Press Enter to add tag",
+    "description": "Tags input placeholder"
+  },
+  "credentials": {
+    "message": "Login Credentials Memo (encrypted)",
+    "description": "Credentials label"
+  },
+  "emailPlaceholder": {
+    "message": "e.g.: email xxx@xx.com",
+    "description": "Email placeholder"
+  },
+  "passwordPlaceholder": {
+    "message": "Password hint (for your reference only)",
+    "description": "Password placeholder"
+  },
+  "credentialsHint": {
+    "message": "⚠️ Stored locally only, recommend storing hints only",
+    "description": "Credentials hint"
+  },
+  "group": {
+    "message": "Group",
+    "description": "Group label"
+  },
+  "noGroup": {
+    "message": "No group",
+    "description": "No group option"
+  },
+  "colorLabel": {
+    "message": "Color",
+    "description": "Color label"
+  },
+  "advancedConfig": {
+    "message": "🔧 Advanced (UA/Proxy/Fingerprint)",
+    "description": "Advanced config title"
+  },
+  "customUA": {
+    "message": "Custom User-Agent",
+    "description": "Custom UA label"
+  },
+  "useGlobalSettings": {
+    "message": "Use global settings",
+    "description": "Use global settings option"
+  },
+  "customUAPlaceholder": {
+    "message": "Custom UA string",
+    "description": "Custom UA placeholder"
+  },
+  "proxy": {
+    "message": "Proxy",
+    "description": "Proxy label"
+  },
+  "proxyNone": {
+    "message": "None",
+    "description": "No proxy option"
+  },
+  "proxyPlaceholder": {
+    "message": "host:port",
+    "description": "Proxy placeholder"
+  },
+  "fingerprint": {
+    "message": "Fingerprint Protection",
+    "description": "Fingerprint label"
+  },
+  "randomFingerprint": {
+    "message": "🎲 Random",
+    "description": "Random fingerprint button"
+  },
+  "clearFingerprint": {
+    "message": "✕ Clear",
+    "description": "Clear fingerprint button"
+  },
+  "fingerprintNotConfigured": {
+    "message": "Not configured",
+    "description": "Fingerprint not configured status"
+  },
+  "cancel": {
+    "message": "Cancel",
+    "description": "Cancel button"
+  },
+  "save": {
+    "message": "Save",
+    "description": "Save button"
+  },
+  "confirm": {
+    "message": "OK",
+    "description": "Confirm button"
+  },
+  "confirmAction": {
+    "message": "Confirm",
+    "description": "Confirm action title"
+  },
+  "confirmActionMsg": {
+    "message": "Are you sure you want to proceed?",
+    "description": "Confirm action message"
+  },
+  "deleteConfirm": {
+    "message": "Delete Confirmation",
+    "description": "Delete confirm title"
+  },
+  "deleteConfirmMsg": {
+    "message": "Are you sure you want to delete \"{name}\"? This cannot be undone.",
+    "description": "Delete confirm message"
+  },
+  "logoutConfirm": {
+    "message": "Logout",
+    "description": "Logout confirm title"
+  },
+  "logoutConfirmMsg": {
+    "message": "Are you sure you want to clear the login status for this website?",
+    "description": "Logout confirm message"
+  },
+  "autoRotateSettings": {
+    "message": "🔄 Auto Rotate Settings",
+    "description": "Auto rotate settings title"
+  },
+  "rotateInterval": {
+    "message": "Interval",
+    "description": "Rotate interval label"
+  },
+  "rotateAccounts": {
+    "message": "Accounts to rotate",
+    "description": "Rotate accounts label"
+  },
+  "rotateHint": {
+    "message": "💡 Select at least 2 accounts",
+    "description": "Rotate hint"
+  },
+  "startRotate": {
+    "message": "Start Rotation",
+    "description": "Start rotate button"
+  },
+  "refreshAll": {
+    "message": "Refresh all accounts",
+    "description": "Refresh all menu"
+  },
+  "verifyAll": {
+    "message": "Check account status",
+    "description": "Verify all menu"
+  },
+  "exportDomain": {
+    "message": "Export this site",
+    "description": "Export domain menu"
+  },
+  "exportAll": {
+    "message": "Export all data",
+    "description": "Export all menu"
+  },
+  "refreshAccount": {
+    "message": "Refresh account",
+    "description": "Refresh account menu"
+  },
+  "duplicateAccount": {
+    "message": "Duplicate account",
+    "description": "Duplicate account menu"
+  },
+  "clearAndSwitch": {
+    "message": "Clear & Switch",
+    "description": "Clear and switch menu"
+  },
+  "quickSwitch": {
+    "message": "Quick switch account",
+    "description": "Shortcut description"
+  },
+  "presetTagMain": {
+    "message": "Main",
+    "description": "Preset tag - main"
+  },
+  "presetTagAlt": {
+    "message": "Alt",
+    "description": "Preset tag - alt"
+  },
+  "presetTagTest": {
+    "message": "Test",
+    "description": "Preset tag - test"
+  },
+  "presetTagWork": {
+    "message": "Work",
+    "description": "Preset tag - work"
+  },
+  "presetTagPersonal": {
+    "message": "Personal",
+    "description": "Preset tag - personal"
+  },
+  "items": {
+    "message": "",
+    "description": "Items (count unit)"
+  },
+  "noResults": {
+    "message": "No matching accounts found",
+    "description": "Search no results"
+  },
+  "searchPlaceholder": {
+    "message": "Search accounts...",
+    "description": "Search placeholder"
+  },
+  "ungrouped": {
+    "message": "Ungrouped",
+    "description": "Ungrouped label"
+  },
+  "toggleThemeLight": {
+    "message": "Switch to light mode",
+    "description": "Switch to light mode"
+  },
+  "toggleThemeDark": {
+    "message": "Switch to dark mode",
+    "description": "Switch to dark mode"
+  }
+}

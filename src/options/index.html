@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwitchID - 设置</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="8" r="4" fill="white"/>
+            <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="18" cy="6" r="3" fill="#4ADE80"/>
+            <path d="M16.5 6l1 1 2-2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <h1>SwitchID</h1>
+          <span class="version">v1.0.5</span>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="#profiles" class="nav-item active" data-section="profiles">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+          <span>账号管理</span>
+        </a>
+        <a href="#settings" class="nav-item" data-section="settings">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+          </svg>
+          <span>偏好设置</span>
+        </a>
+        <a href="#groups" class="nav-item" data-section="groups">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+          </svg>
+          <span>账号分组</span>
+        </a>
+        <a href="#rules" class="nav-item" data-section="rules">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+          <span>自动规则</span>
+        </a>
+        <a href="#advanced" class="nav-item" data-section="advanced">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/>
+            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+          </svg>
+          <span>高级设置</span>
+        </a>
+        <a href="#data" class="nav-item" data-section="data">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+            <polyline points="17,8 12,3 7,8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          <span>数据管理</span>
+        </a>
+        <a href="#help" class="nav-item" data-section="help">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <span>使用帮助</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="main">
+      <!-- 账号管理 -->
+      <section id="profiles" class="section active">
+        <div class="section-header">
+          <h2>账号管理</h2>
+          <p>管理所有网站保存的账号配置</p>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-domains">0</span>
+              <span class="stat-label">网站</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-profiles">0</span>
+              <span class="stat-label">账号配置</span>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon purple">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                <polyline points="7,10 12,15 17,10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
+            <div class="stat-info">
+              <span class="stat-value" id="stat-size">0 KB</span>
+              <span class="stat-label">存储空间</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>所有账号配置</h3>
+            <div class="batch-actions" id="batch-actions" style="display: none;">
+              <span id="selected-count">已选 0 个</span>
+              <button id="btn-batch-delete" class="btn btn-danger btn-sm">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                </svg>
+                批量删除
+              </button>
+              <button id="btn-cancel-select" class="btn btn-secondary btn-sm">取消</button>
+            </div>
+            <button id="btn-batch-mode" class="btn btn-secondary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+              批量操作
+            </button>
+          </div>
+          <div class="card-body">
+            <div id="all-profiles" class="profiles-grid">
+              <!-- 动态生成 -->
+            </div>
+            <div id="empty-profiles" class="empty-state" style="display: none;">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#D1D5DB" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <line x1="17" y1="11" x2="23" y2="11"/>
+              </svg>
+              <h4>还没有保存的账号</h4>
+              <p>在网站上登录后，点击扩展图标保存账号</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 偏好设置 -->
+      <section id="settings" class="section">
+        <div class="section-header">
+          <h2 data-i18n="settings">偏好设置</h2>
+          <p data-i18n="settings_desc">自定义扩展的外观和行为</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-i18n="appearance">外观</h3>
+          </div>
+          <div class="card-body">
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4 data-i18n="theme">主题模式</h4>
+                <p data-i18n="theme_desc">选择界面的颜色主题</p>
+              </div>
+              <div class="theme-switcher" id="theme-switcher">
+                <button class="theme-option active" data-theme="light">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                  </svg>
+                  <span data-i18n="light">浅色</span>
+                </button>
+                <button class="theme-option" data-theme="dark">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                  </svg>
+                  <span data-i18n="dark">深色</span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4 data-i18n="language">语言</h4>
+                <p data-i18n="language_desc">选择界面显示语言</p>
+              </div>
+              <select id="language-select" class="input" style="width: auto;">
+                <option value="zh-CN">简体中文</option>
+                <option value="zh-TW">繁體中文</option>
+                <option value="en">English</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-i18n="shortcuts">快捷键</h3>
+          </div>
+          <div class="card-body">
+            <div class="shortcut-row">
+              <span class="shortcut-name" data-i18n="open_popup">打开扩展弹窗</span>
+              <kbd class="shortcut-key">Alt + Shift + S</kbd>
+            </div>
+            <div class="shortcut-row">
+              <span class="shortcut-name" data-i18n="quick_switch">快速切换账号 1~9</span>
+              <kbd class="shortcut-key" data-i18n="press_1_9">弹窗中按 1~9</kbd>
+            </div>
+            <p class="shortcut-hint">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              <span data-i18n="shortcut_hint">可在浏览器的扩展快捷键设置中自定义</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 账号分组 -->
+      <section id="groups" class="section">
+        <div class="section-header">
+          <h2>账号分组</h2>
+          <p>将账号组织成分组，方便管理</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>创建分组</h3>
+            <button id="btn-add-group" class="btn btn-primary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              新建分组
+            </button>
+          </div>
+          <div class="card-body">
+            <div id="groups-list" class="groups-list">
+              <!-- 动态生成 -->
+            </div>
+            <div id="empty-groups" class="empty-state" style="display: none;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D1D5DB" stroke-width="1.5">
+                <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+              </svg>
+              <h4>还没有分组</h4>
+              <p>创建分组来组织你的账号，如「工作」「个人」「社交媒体」</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>使用说明</h3>
+          </div>
+          <div class="card-body">
+            <p class="help-text">分组可以帮助你更好地组织账号。例如：</p>
+            <ul class="help-list">
+              <li>「工作」- 公司邮箱、企业微信、钉钉等</li>
+              <li>「个人」- 个人邮箱、社交账号等</li>
+              <li>「购物」- 淘宝、京东、拼多多等</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 自动规则 -->
+      <section id="rules" class="section">
+        <div class="section-header">
+          <h2>自动规则</h2>
+          <p>为特定网站自动使用指定账号</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>规则列表</h3>
+            <button id="btn-add-rule" class="btn btn-primary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              添加规则
+            </button>
+          </div>
+          <div class="card-body">
+            <div id="rules-list" class="rules-list">
+              <!-- 动态生成 -->
+            </div>
+            <div id="empty-rules" class="empty-state" style="display: none;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#D1D5DB" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+              <h4>还没有自动规则</h4>
+              <p>添加规则后，访问指定网站时会自动切换到对应账号</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>使用说明</h3>
+          </div>
+          <div class="card-body">
+            <p class="help-text">自动规则可以让你在访问特定网站时自动切换账号。例如：</p>
+            <ul class="help-list">
+              <li>访问 mail.company.com 时自动切换到「工作邮箱」</li>
+              <li>访问 github.com 时自动切换到「工作 GitHub」</li>
+              <li>支持通配符匹配，如 *.example.com</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 高级设置 -->
+      <section id="advanced" class="section">
+        <div class="section-header">
+          <h2>高级设置</h2>
+          <p>代理、User-Agent 等高级功能配置</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>🌐 代理设置</h3>
+          </div>
+          <div class="card-body">
+            <p class="help-text">为每个账号配置独立的代理服务器，切换账号时自动切换代理。</p>
+            
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4>启用代理切换</h4>
+                <p>切换账号时自动应用对应的代理设置</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="proxy-enabled">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div id="proxy-settings" class="proxy-settings" style="display: none;">
+              <div class="form-group">
+                <label>代理类型</label>
+                <select id="proxy-scheme" class="input" style="width: auto;">
+                  <option value="http">HTTP</option>
+                  <option value="https">HTTPS</option>
+                  <option value="socks4">SOCKS4</option>
+                  <option value="socks5">SOCKS5</option>
+                </select>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group" style="flex: 2;">
+                  <label>代理服务器地址</label>
+                  <input type="text" id="proxy-host" class="input" placeholder="如：127.0.0.1 或 proxy.example.com" />
+                </div>
+                <div class="form-group" style="flex: 1;">
+                  <label>端口</label>
+                  <input type="number" id="proxy-port" class="input" placeholder="8080" />
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>绕过代理的地址（每行一个）</label>
+                <textarea id="proxy-bypass" class="input" rows="2" placeholder="localhost&#10;127.0.0.1&#10;*.local"></textarea>
+              </div>
+              
+              <button id="btn-apply-proxy" class="btn btn-primary btn-sm" style="margin-top: 8px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20,6 9,17 4,12"/>
+                </svg>
+                应用代理设置
+              </button>
+            </div>
+            
+            <div class="warning-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <span>注意：代理功能需要 proxy 权限，上架版本暂未启用。开发测试时可手动添加权限。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>🎭 User-Agent 伪装</h3>
+          </div>
+          <div class="card-body">
+            <p class="help-text">为每个账号配置独立的 User-Agent，模拟不同的浏览器/设备。</p>
+            
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4>启用 UA 伪装</h4>
+                <p>切换账号时自动修改 User-Agent</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="ua-enabled">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div id="ua-settings" class="ua-settings" style="display: none;">
+              <div class="ua-presets">
+                <h4>预设 User-Agent</h4>
+                <div class="ua-preset-list">
+                  <button class="ua-preset" data-ua="chrome-win">Chrome Windows</button>
+                  <button class="ua-preset" data-ua="chrome-mac">Chrome macOS</button>
+                  <button class="ua-preset" data-ua="firefox-win">Firefox Windows</button>
+                  <button class="ua-preset" data-ua="safari-mac">Safari macOS</button>
+                  <button class="ua-preset" data-ua="edge-win">Edge Windows</button>
+                  <button class="ua-preset" data-ua="mobile-android">Android Chrome</button>
+                  <button class="ua-preset" data-ua="mobile-ios">iOS Safari</button>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>自定义 User-Agent</label>
+                <textarea id="custom-ua" class="input" rows="2" placeholder="输入自定义 User-Agent 字符串..."></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>🔄 账号维护</h3>
+          </div>
+          <div class="card-body">
+            <p class="help-text">自动维护账号 Cookie 的有效性。</p>
+            
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4>自动刷新快过期账号</h4>
+                <p>当前登录账号的 Cookie 快过期时自动刷新（7天内）</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="auto-refresh-expiring">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="warning-box" style="margin-top: 12px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <span>仅对当前激活的账号生效，需要保持浏览器运行。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>🛡️ 指纹保护设置</h3>
+          </div>
+          <div class="card-body">
+            <p class="help-text">配置浏览器指纹保护功能，防止网站追踪。</p>
+            
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4>启用指纹保护</h4>
+                <p>伪装 Canvas、WebGL、Audio 等浏览器指纹</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="fingerprint-enabled" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div id="fingerprint-options" style="margin-top: 16px;">
+              <div class="fp-group">
+                <h4 style="margin-bottom: 8px; font-size: 13px; color: #10B981;">
+                  🔒 强指纹（高度唯一，建议保护）
+                </h4>
+                <p class="help-text" style="margin-bottom: 10px; font-size: 12px;">修改这些指纹可显著提升隐私保护，打断追踪链</p>
+                <div class="fingerprint-items">
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="fp-canvas" checked>
+                    <span>Canvas 指纹</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="fp-webgl" checked>
+                    <span>WebGL 指纹</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="fp-audio" checked>
+                    <span>Audio 指纹</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="fp-font" checked>
+                    <span>字体指纹</span>
+                  </label>
+                </div>
+              </div>
+              
+              <div class="fp-group" style="margin-top: 16px;">
+                <h4 style="margin-bottom: 8px; font-size: 13px; color: #6B7280;">
+                  📋 弱指纹（识别力较低，按需选择）
+                </h4>
+                <p class="help-text" style="margin-bottom: 10px; font-size: 12px;">多数情况下无需修改，过度伪装可能影响网页功能</p>
+                <div class="fingerprint-items">
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="fp-domrect">
+                    <span>DOMRect 指纹</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="fp-webgpu">
+                    <span>WebGPU 指纹</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="fp-timezone">
+                    <span>时区伪装</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" id="fp-webrtc">
+                    <span>禁用 WebRTC</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="warning-box" style="margin-top: 12px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <span>指纹保护可能影响某些网站功能，如遇问题请将网站加入白名单。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>📋 指纹白名单</h3>
+            <button id="btn-add-whitelist" class="btn btn-primary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              添加网站
+            </button>
+          </div>
+          <div class="card-body">
+            <p class="help-text">白名单中的网站将不会应用指纹保护，支持子域名匹配（如 example.com 匹配 *.example.com）。</p>
+            
+            <div id="whitelist-container" style="margin-top: 12px;">
+              <div id="whitelist-list" class="whitelist-list">
+                <!-- 动态生成 -->
+              </div>
+              <div id="empty-whitelist" class="empty-state-small">
+                <p>白名单为空，所有网站都会应用指纹保护</p>
+              </div>
+            </div>
+            
+            <div class="preset-whitelist" style="margin-top: 16px;">
+              <h4 style="margin-bottom: 8px; font-size: 13px; color: #6B7280;">常用网站快速添加</h4>
+              <div class="preset-buttons">
+                <button class="btn btn-secondary btn-xs preset-btn" data-domain="paypal.com">PayPal</button>
+                <button class="btn btn-secondary btn-xs preset-btn" data-domain="alipay.com">支付宝</button>
+                <button class="btn btn-secondary btn-xs preset-btn" data-domain="bank">银行网站</button>
+                <button class="btn btn-secondary btn-xs preset-btn" data-domain="google.com">Google</button>
+                <button class="btn btn-secondary btn-xs preset-btn" data-domain="github.com">GitHub</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>📑 标签页管理</h3>
+          </div>
+          <div class="card-body">
+            <p class="help-text">查看和管理当前打开的标签页。</p>
+            
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4>切换后自动刷新</h4>
+                <p>切换账号后自动刷新当前标签页</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="auto-refresh" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4>切换后关闭相关标签</h4>
+                <p>切换账号后关闭该网站的其他标签页</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="close-related-tabs">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="setting-row">
+              <div class="setting-info">
+                <h4>切换时清除本地存储</h4>
+                <p>清除 localStorage、IndexedDB 等，防止账号关联（推荐开启）</p>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="clear-storage-on-switch" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="tabs-overview">
+              <h4>当前标签页概览</h4>
+              <div id="tabs-list" class="tabs-list">
+                <p class="loading-text">加载中...</p>
+              </div>
+              <button id="btn-refresh-tabs" class="btn btn-secondary btn-sm" style="margin-top: 12px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 4v6h-6M1 20v-6h6"/>
+                  <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+                </svg>
+                刷新列表
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 数据管理 -->
+      <section id="data" class="section">
+        <div class="section-header">
+          <h2>数据管理</h2>
+          <p>导入、导出或清除数据</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>备份与恢复</h3>
+          </div>
+          <div class="card-body">
+            <div class="action-row">
+              <div class="action-info">
+                <h4>导出数据</h4>
+                <p>将所有账号配置导出为 JSON 文件</p>
+              </div>
+              <button id="btn-export" class="btn btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                  <polyline points="17,8 12,3 7,8"/>
+                  <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+                导出
+              </button>
+            </div>
+            <div class="action-row">
+              <div class="action-info">
+                <h4>导入数据</h4>
+                <p>从备份文件恢复账号配置</p>
+              </div>
+              <button id="btn-import" class="btn btn-secondary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                  <polyline points="7,10 12,15 17,10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                导入
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card danger">
+          <div class="card-header">
+            <h3>⚠️ 危险操作</h3>
+          </div>
+          <div class="card-body">
+            <div class="action-row">
+              <div class="action-info">
+                <h4>清除所有数据</h4>
+                <p>删除所有保存的账号配置，此操作无法撤销</p>
+              </div>
+              <button id="btn-clear-all" class="btn btn-danger">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                </svg>
+                清除全部
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 使用帮助 -->
+      <section id="help" class="section">
+        <div class="section-header">
+          <h2>📖 使用帮助与风险提示</h2>
+          <p>了解 SwitchID 隐私保护和账户管理工具的正确使用方法</p>
+        </div>
+
+        <!-- 产品定位说明 -->
+        <div class="card highlight-card">
+          <div class="card-header">
+            <h3>🔒 产品定位</h3>
+          </div>
+          <div class="card-body">
+            <p><strong>SwitchID 是一个隐私保护和本地账户管理工具</strong>，专注于：</p>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <span class="feature-icon">🛡️</span>
+                <div>
+                  <h4>隐私保护</h4>
+                  <p>防止浏览器指纹追踪，保护用户隐私不被恶意网站收集</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">📁</span>
+                <div>
+                  <h4>本地账户管理</h4>
+                  <p>在本地设备上管理多个账户的登录状态，便于快速切换</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🔐</span>
+                <div>
+                  <h4>数据安全</h4>
+                  <p>所有数据仅存储在用户本地设备，不涉及任何服务器通信</p>
+                </div>
+              </div>
+            </div>
+            <div class="warning-box" style="margin-top: 16px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              <span><strong>重要声明：</strong>我们仅提供技术功能，用户需自行确保使用符合相关法律法规和网站服务条款。</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 重要风险提示 -->
+        <div class="card warning-card">
+          <div class="card-header">
+            <h3>⚠️ 重要风险提示</h3>
+          </div>
+          <div class="card-body">
+            <div class="risk-grid">
+              <div class="risk-item high-risk">
+                <div class="risk-level">🚨 高风险</div>
+                <h4>法律合规风险</h4>
+                <ul>
+                  <li>不同网站对多账户使用有不同政策</li>
+                  <li>某些网站明确禁止使用自动化工具</li>
+                  <li>违反服务条款可能导致账户封禁</li>
+                  <li>用户需自行遵守网站服务条款</li>
+                </ul>
+              </div>
+              <div class="risk-item medium-risk">
+                <div class="risk-level">⚠️ 中风险</div>
+                <h4>账户安全风险</h4>
+                <ul>
+                  <li>频繁切换可能触发安全检查</li>
+                  <li>异常行为可能导致账户限制</li>
+                  <li>指纹伪装可能被检测并阻止</li>
+                  <li>建议保持合理的使用频率</li>
+                </ul>
+              </div>
+            </div>
+            <div class="risk-actions">
+              <button class="btn btn-primary" onclick="window.open('https://github.com/quantrader-ops/SwitchID/blob/main/RISK_WARNINGS.md')">
+                查看详细风险提示
+              </button>
+              <button class="btn btn-secondary" onclick="window.open('https://github.com/quantrader-ops/SwitchID/blob/main/USER_GUIDE.md')">
+                阅读完整使用指南
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 使用步骤 -->
+        <div class="help-grid">
+          <div class="help-card">
+            <div class="help-step">1</div>
+            <h4>保存账户状态</h4>
+            <p>在网站上正常登录您的账户后，点击扩展图标，输入账户名称并保存。登录状态会被安全存储在本地。</p>
+            <div class="help-note">⚠️ 仅保存您合法拥有的账户</div>
+          </div>
+          <div class="help-card">
+            <div class="help-step">2</div>
+            <h4>切换账户</h4>
+            <p>点击扩展图标，在列表中选择要切换的账户，点击「切换」按钮，页面会自动刷新完成切换。</p>
+            <div class="help-note">💡 切换过程中请勿关闭浏览器</div>
+          </div>
+          <div class="help-card">
+            <div class="help-step">3</div>
+            <h4>添加新账户</h4>
+            <p>点击「退出登录」清除当前状态，然后登录新账户并保存为新的配置。</p>
+            <div class="help-note">🔒 确保在完全登录状态下保存</div>
+          </div>
+          <div class="help-card">
+            <div class="help-step">4</div>
+            <h4>数据安全</h4>
+            <p>所有数据存储在本地浏览器中，不会上传到任何服务器。建议定期导出备份重要数据。</p>
+            <div class="help-note">📤 定期备份，防止数据丢失</div>
+          </div>
+        </div>
+
+        <!-- 隐私保护功能说明 -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🛡️ 隐私保护功能</h3>
+          </div>
+          <div class="card-body">
+            <p class="help-text" style="margin-bottom: 16px;">
+              本工具提供多种隐私保护功能，防止恶意网站追踪用户设备特征：
+            </p>
+            
+            <div class="best-practice-grid">
+              <div class="practice-item">
+                <div class="practice-icon enabled">✅</div>
+                <div class="practice-content">
+                  <h4>浏览器指纹伪装</h4>
+                  <p>Canvas、WebGL、Audio 等指纹防护，每个账户独立指纹，防止追踪关联。</p>
+                  <span class="practice-status">隐私保护功能</span>
+                </div>
+              </div>
+              
+              <div class="practice-item">
+                <div class="practice-icon enabled">✅</div>
+                <div class="practice-content">
+                  <h4>User-Agent 管理</h4>
+                  <p>保护浏览器身份信息，支持预设和自定义 UA，防止身份识别。</p>
+                  <span class="practice-status">隐私保护功能</span>
+                </div>
+              </div>
+              
+              <div class="practice-item">
+                <div class="practice-icon enabled">✅</div>
+                <div class="practice-content">
+                  <h4>存储隔离</h4>
+                  <p>为不同账户提供独立的 localStorage、sessionStorage 环境。</p>
+                  <span class="practice-status">账户管理功能</span>
+                </div>
+              </div>
+              
+              <div class="practice-item">
+                <div class="practice-icon manual">⚠️</div>
+                <div class="practice-content">
+                  <h4>网络代理支持</h4>
+                  <p>支持 HTTP/HTTPS/SOCKS5 代理，增强网络隐私保护。</p>
+                  <span class="practice-status">需手动配置</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="info-box" style="margin-top: 16px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 16v-4"/>
+                <path d="M12 8h.01"/>
+              </svg>
+              <span><strong>使用目的：</strong>这些功能仅用于合法的隐私保护，防止恶意追踪和数据收集。过度伪装可能影响网站正常功能。</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 使用建议 -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📋 安全使用建议</h3>
+          </div>
+          <div class="card-body">
+            <div class="scenario-grid">
+              <div class="scenario-item safe">
+                <span class="scenario-icon">✅</span>
+                <h4>推荐使用场景</h4>
+                <ul>
+                  <li>管理个人拥有的多个合法账户</li>
+                  <li>工作环境中的业务账户管理</li>
+                  <li>软件测试和开发用途</li>
+                  <li>学术研究和教育用途</li>
+                </ul>
+              </div>
+              <div class="scenario-item warning">
+                <span class="scenario-icon">⚠️</span>
+                <h4>使用注意事项</h4>
+                <ul>
+                  <li>使用前了解网站服务条款</li>
+                  <li>保持合理的使用频率</li>
+                  <li>定期备份重要账户数据</li>
+                  <li>及时关注账户状态变化</li>
+                </ul>
+              </div>
+              <div class="scenario-item danger">
+                <span class="scenario-icon">❌</span>
+                <h4>严禁使用场景</h4>
+                <ul>
+                  <li>违反网站服务条款的行为</li>
+                  <li>欺诈、滥用或恶意活动</li>
+                  <li>侵犯他人权益的行为</li>
+                  <li>任何违法违规活动</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 技术原理说明 -->
+        <div class="card">
+          <div class="card-header">
+            <h3>🔧 技术原理</h3>
+          </div>
+          <div class="card-body">
+            <div class="tech-grid">
+              <div class="tech-item">
+                <h4>🔒 隐私保护原理</h4>
+                <p>通过 Hook 浏览器 API，为每个账户生成独立的设备指纹，防止网站通过指纹技术追踪用户。</p>
+              </div>
+              <div class="tech-item">
+                <h4>📁 账户管理原理</h4>
+                <p>使用浏览器标准 API 读取和设置 Cookie、localStorage 等数据，实现账户状态的保存和恢复。</p>
+              </div>
+              <div class="tech-item">
+                <h4>🔐 数据安全保障</h4>
+                <p>所有数据使用 Chrome Storage API 存储在本地，不进行任何网络通信，用户拥有完全控制权。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 相关资源 -->
+        <div class="card">
+          <div class="card-header">
+            <h3>📚 相关资源</h3>
+          </div>
+          <div class="card-body">
+            <div class="resource-grid">
+              <a href="https://github.com/quantrader-ops/SwitchID/blob/main/USER_GUIDE.md" target="_blank" class="resource-link">
+                <div class="resource-icon">📖</div>
+                <div>
+                  <h4>详细使用指南</h4>
+                  <p>完整的使用教程和风险说明</p>
+                </div>
+              </a>
+              <a href="https://github.com/quantrader-ops/SwitchID/blob/main/RISK_WARNINGS.md" target="_blank" class="resource-link">
+                <div class="resource-icon">⚠️</div>
+                <div>
+                  <h4>风险提示文档</h4>
+                  <p>详细的风险评估和缓解建议</p>
+                </div>
+              </a>
+              <a href="https://github.com/quantrader-ops/SwitchID/blob/main/TERMS_OF_USE.md" target="_blank" class="resource-link">
+                <div class="resource-icon">⚖️</div>
+                <div>
+                  <h4>使用条款</h4>
+                  <p>详细的使用条款和责任声明</p>
+                </div>
+              </a>
+              <a href="https://github.com/quantrader-ops/SwitchID" target="_blank" class="resource-link">
+                <div class="resource-icon">🔗</div>
+                <div>
+                  <h4>项目主页</h4>
+                  <p>GitHub 开源项目和技术支持</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+              </div>
+              <div class="scenario-item">
+                <span class="scenario-icon">🔍</span>
+                <h4>SEO 从业者</h4>
+                <p>管理多个平台账号，进行内容发布和数据分析。</p>
+              </div>
+              <div class="scenario-item">
+                <span class="scenario-icon">👨‍💼</span>
+                <h4>日常办公</h4>
+                <p>工作账号与个人账号分离，一键切换，提高效率。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>常见问题</h3>
+          </div>
+          <div class="card-body">
+            <div class="faq-item">
+              <h4>可以同时登录多个账号吗？</h4>
+              <p>不可以。本扩展实现的是「快速切换」，同一时间只能使用一个账号。如需同时登录，建议使用浏览器的多用户功能或多开浏览器。</p>
+            </div>
+            <div class="faq-item">
+              <h4>切换后还是原来的账号？</h4>
+              <p>请确保在高级设置中开启「切换时清除本地存储」选项。某些网站会使用 localStorage 等存储登录状态。</p>
+            </div>
+            <div class="faq-item">
+              <h4>指纹保护会影响网站功能吗？</h4>
+              <p>极少数网站可能受影响。如遇问题，可在高级设置中将该网站添加到指纹白名单。</p>
+            </div>
+            <div class="faq-item">
+              <h4>如何配合代理使用？</h4>
+              <p>代理功能即将上线。目前建议使用 Proxy SwitchyOmega 等第三方代理扩展，在切换账号时手动切换代理。</p>
+            </div>
+            <div class="faq-item">
+              <h4>数据安全吗？</h4>
+              <p>所有数据存储在本地浏览器中，不会上传到任何服务器。代码开源，可自行审查。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>关于</h3>
+          </div>
+          <div class="card-body">
+            <div class="about-row">
+              <span>版本</span>
+              <span>1.0.0</span>
+            </div>
+            <div class="about-row">
+              <span>兼容浏览器</span>
+              <span>Chrome / Edge / Firefox</span>
+            </div>
+            <div class="about-row">
+              <span>许可证</span>
+              <span>MIT License</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">
+    <span id="toast-message"></span>
+  </div>
+
+  <!-- 确认对话框 -->
+  <div id="confirm-modal" class="modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <div class="modal-icon">⚠️</div>
+      <h3 id="confirm-title">确认操作</h3>
+      <p id="confirm-message">确定要执行此操作吗？</p>
+      <div class="modal-actions">
+        <button id="confirm-cancel" class="btn btn-secondary">取消</button>
+        <button id="confirm-ok" class="btn btn-danger">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分组编辑对话框 -->
+  <div id="group-modal" class="modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content modal-form">
+      <h3 id="group-modal-title">新建分组</h3>
+      <div class="form-group">
+        <label>分组名称</label>
+        <input type="text" id="group-name-input" class="input" placeholder="如：工作、个人、购物" maxlength="20" />
+      </div>
+      <div class="form-group">
+        <label>颜色标识</label>
+        <div class="colors" id="group-color-picker">
+          <button class="color-btn active" data-color="#4285F4" style="background:#4285F4"></button>
+          <button class="color-btn" data-color="#34A853" style="background:#34A853"></button>
+          <button class="color-btn" data-color="#FBBC05" style="background:#FBBC05"></button>
+          <button class="color-btn" data-color="#EA4335" style="background:#EA4335"></button>
+          <button class="color-btn" data-color="#9333EA" style="background:#9333EA"></button>
+          <button class="color-btn" data-color="#EC4899" style="background:#EC4899"></button>
+          <button class="color-btn" data-color="#14B8A6" style="background:#14B8A6"></button>
+          <button class="color-btn" data-color="#6B7280" style="background:#6B7280"></button>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button id="group-cancel" class="btn btn-secondary">取消</button>
+        <button id="group-save" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 规则编辑对话框 -->
+  <div id="rule-modal" class="modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content modal-form">
+      <h3 id="rule-modal-title">添加规则</h3>
+      <div class="form-group">
+        <label>URL 匹配模式</label>
+        <input type="text" id="rule-pattern-input" class="input" placeholder="如：*.example.com 或 mail.google.com" />
+        <span class="input-hint">支持 * 通配符</span>
+      </div>
+      <div class="form-group">
+        <label>选择网站</label>
+        <select id="rule-domain-select" class="input">
+          <option value="">-- 选择网站 --</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>选择账号</label>
+        <select id="rule-profile-select" class="input">
+          <option value="">-- 先选择网站 --</option>
+        </select>
+      </div>
+      <div class="modal-actions">
+        <button id="rule-cancel" class="btn btn-secondary">取消</button>
+        <button id="rule-save" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 白名单编辑对话框 -->
+  <div id="whitelist-modal" class="modal" style="display: none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content modal-form">
+      <h3>添加白名单</h3>
+      <div class="form-group">
+        <label>域名</label>
+        <input type="text" id="whitelist-domain-input" class="input" placeholder="如：example.com 或 *.bank.com" />
+        <span class="input-hint">支持子域名匹配，如 example.com 会匹配 www.example.com、api.example.com 等</span>
+      </div>
+      <div class="modal-actions">
+        <button id="whitelist-cancel" class="btn btn-secondary">取消</button>
+        <button id="whitelist-save" class="btn btn-primary">添加</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 隐藏的文件输入 -->
+  <input type="file" id="file-input" accept=".json" style="display: none;">
+
+  <script src="index.js"></script>
+</body>
+</html>
