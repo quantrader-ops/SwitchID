@@ -78,7 +78,7 @@ SwitchID 是一个**浏览器隐私保护工具**，提供以下技术功能：
 |--------|---------|------|
 | Chrome | ✅ 完整支持 | Manifest V3 |
 | Edge | ✅ 完整支持 | Chromium 内核 |
-| Firefox | ✅ 基础支持 | 部分功能受限 |
+| Firefox | ✅ 完全支持 | gecko内核   |
 
 ## 📦 安装方法
 
@@ -92,7 +92,11 @@ SwitchID 是一个**浏览器隐私保护工具**，提供以下技术功能：
 ### Chrome Web Store
 
 > 注意：开发者需要5美元！！！！
-
+### Firefox Add-ons商店
+1. 访问 [Firefox Add-ons 商店]([https://microsoftedge.microsoft.com/addons/detail/eadjbapggginooenlbbpoebfjhklokni](https://addons.mozilla.org/addon/switchid-%E5%A4%9A%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86%E5%8A%A9%E6%89%8B/.))
+2. 点击"获取"按钮安装
+3. 确认安装权限
+4. 开始使用
 ### 开发者安装
 
 1. 从 GitHub 下载源代码
